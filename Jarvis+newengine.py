@@ -8,6 +8,7 @@ import datetime
 import wolframalpha
 import os
 import sys
+import weather_forecast as wf
 
 engine = pyttsx3.init('sapi5')
 
@@ -74,6 +75,13 @@ if __name__ == '__main__':
         elif 'open gmail' in query:
             speak('okay')
             webbrowser.open('www.gmail.com')
+            
+          elif 'weather' in query:
+           #x=input("Enter the place-")
+            #y=input("Enter the Time(24hr)-")
+            #z=input("Enter the date(Y-m-d)-")
+            wf.forecast(place = 'delhi', time=datetime.datetime.now(), date=datetime.now().strftime('%Y-%m-%d'), forecast="daily")
+            speak('okay')
 
         elif "what\'s up" in query or 'how are you' in query:
             stMsgs = ['Just doing my thing!', 'I am fine!', 'Nice!', 'I am nice and full of energy']
